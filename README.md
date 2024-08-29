@@ -63,28 +63,20 @@ Install the libraries using `install.packages()` in R or `pip install` for Pytho
 
 Before running the analysis scripts, ensure that the raw data is processed correctly. Use the scripts in the `data_preprocess/` directory to clean and transform the data as needed.
 
-\`\`\`bash
-# Example command to preprocess data
-bash data_preprocess/deal_raw_data.sh
-\`\`\`
 
 ## Single Variant Analysis
 
 To conduct single variant analysis, navigate to the `Single_variant_analysis/linear_regression_classification/` directory and run the scripts provided.
 
-\`\`\`bash
 # Run PLINK for single variant analysis
 bash Single_variant_analysis/linear_regression_classification/plink_code.sh
-\`\`\`
 
 ## Combined Variants Analysis
 
 Combined variant analysis includes the use of statistical tests like Burden, SKAT, and SKAT-O. Navigate to the `Combined_variants_analysis/` directory and run the respective scripts.
 
-\`\`\`bash
+
 # Run SAIGE for combined variants analysis
-bash Combined_variants_analysis/SAIGE_scripts.sh
-\`\`\`
 
 ## Contributing
 
