@@ -1,4 +1,4 @@
-# Association of PCSK9 and T2D-RG
+# Investigating the effects of coding \textit{PCSK9} gene variants on blood glucose levels and susceptibility to type 2 diabetes
 
 This repository contains scripts and data preprocessing workflows for analyzing the association between PCSK9 variants and Type 2 Diabetes (T2D) risk, including random glucose levels (RG) and lipid traits. The analysis is conducted using various statistical methods, including single-variant and combined-variant approaches.
 
