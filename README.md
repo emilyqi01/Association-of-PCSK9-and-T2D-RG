@@ -83,7 +83,6 @@ Combined variant analysis includes the use of statistical tests like Burden, SKA
 Contributions are welcome! Please fork this repository and submit a pull request for any proposed changes or additions.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
 
 This work is licensed under a
