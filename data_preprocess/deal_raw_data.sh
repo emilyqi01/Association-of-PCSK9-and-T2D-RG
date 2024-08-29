@@ -1,3 +1,4 @@
+# All the codes should be worked in terminal/hpc server
 # direct to the Imperial hpc server
 ssh xxxxx@login.hpc.imperial.ac.uk
 # load the software plink
