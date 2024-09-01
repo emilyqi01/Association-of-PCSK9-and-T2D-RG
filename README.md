@@ -10,12 +10,11 @@ This repository contains scripts and data preprocessing workflows for analyzing 
 - [Data Preprocessing](#data-preprocessing)
 - [Single Variant Analysis](#single-variant-analysis)
 - [Combined Variants Analysis](#combined-variants-analysis)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Important Information Before Reproducing the Project
 
-- **Data Access**: This project utilizes data from the UK Biobank, which is subject to copyright and cannot be redistributed. You will need to request access and download the necessary data directly from the [UK Biobank website](https://www.ukbiobank.ac.uk/).
+- **Data Access**: This project utilizes data from the UK Biobank, which is subject to copyright and cannot be redistributed. You will need to request access and download the necessary data directly from the [UK Biobank website](https://www.ukbiobank.ac.uk/). 
 
 - **Software Requirements**: The project relies on various software tools and is primarily executed via terminal commands. To successfully reproduce the results, you may need to install additional software. Please refer to the [Setup and Installation](#setup-and-installation) section for detailed instructions on the required software and installation steps.
 
@@ -50,7 +49,7 @@ install.packages(c("ggplot2", "dplyr", "tidyr", "gridExtra", "MASS"))
 
 This folder contains scripts for preprocessing the raw genetic and phenotypic data.
 
-- `deal_raw_data.sh`: Shell script to clean and preprocess the raw data files.
+- `deal_raw_data.sh`: Shell script to preprocess the raw data files.
 - `lipid_data_transformation_and_visualization.R`: R script for transforming lipid phenotype data and visualizing distributions.
 - `process_and_visualize_genetic_data.R`: R script to process genetic data and generate visual summaries.
 
@@ -73,35 +72,69 @@ This folder includes scripts for performing single-variant analyses, such as lin
 
 This folder contains scripts for combined variant analysis using burden tests, SKAT, and hierarchical clustering.
 
+- `hierarchical_clustering.R`: R script for hierarchical clustering of genetic variants based on Z-scores.
 - `SAIGE_scripts.sh`: Shell script to run SAIGE for group-based analysis.
 - `analysis_combined_pvalues.R`: R script to analyze combined p-values from multiple tests.
-- `hierarchical_clustering.R`: R script for hierarchical clustering of genetic variants based on Z-scores.
-
 
 ## Data Preprocessing
 
-Before running the analysis scripts, ensure that the raw data is processed correctly. Use the scripts in the `data_preprocess/` directory to clean and transform the data as needed.
+After downloading the UK Biobank data, you should have a `.vcf` zip file containing the genetic information for all individuals, as well as a separate file containing phenotypic data (including Type 2 diabetes status, BMI, LDLC, and random glucose levels).
 
+To begin preprocessing, navigate to the `data_preprocess/` directory.
+
+- Run the `deal_raw_data.sh` script using PLINK to process the raw genetic data.
+- The other scripts in this directory can be easily run in R to handle additional preprocessing tasks.
+
+Make sure you have the required software installed and configured correctly before running these scripts.
 
 ## Single Variant Analysis
 
-To conduct single variant analysis, navigate to the `Single_variant_analysis/linear_regression_classification/` directory and run the scripts provided.
+To conduct a single variant analysis, navigate to the `Single_variant_analysis/` directory. This analysis consists of two parts:
 
-# Run PLINK for single variant analysis
-bash Single_variant_analysis/linear_regression_classification/plink_code.sh
+1. **Linear Regression and Classification**
+2. **Regression and Classification with L1 Penalty**
+
+### 1. Linear Regression and Classification
+
+To perform linear regression and classification:
+
+- Navigate to the `linear_regression_classification/` directory.
+- Run the `plink_code.sh` script using PLINK to perform the analysis.
+- After running the PLINK script, use `significant_variants.R` to output the significant results.
+
+### 2. Regression and Classification with L1 Penalty
+
+To perform regression and classification with an L1 penalty:
+
+- Navigate to the `regression_classification_penalty/` directory.
+- Use Python to first encode all the data by running the `encode_data.py` script. Note that the data needed for `encode_data.py` should be prepared during the data preprocessing step.
+- Run the other Python scripts in this directory to complete the analysis with the L1 penalty.
+
 
 ## Combined Variants Analysis
 
-Combined variant analysis includes the use of statistical tests like Burden, SKAT, and SKAT-O. Navigate to the `Combined_variants_analysis/` directory and run the respective scripts.
+To perform a combined variants analysis, follow these steps:
 
+1. **Navigate to the Analysis Directory**  
+   Start by navigating to the `Combined_variants_analysis/` directory.
 
-# Run SAIGE for combined variants analysis
+2. **Perform Hierarchical Clustering**  
+   Run the `hierarchical_clustering.R` script to perform hierarchical clustering. This script will create a clustered file that will be used in the subsequent steps.
 
-## Contributing
+3. **Run SAIGE for Combined Variants Analysis**  
+   Execute the `SAIGE_scripts.sh` script to run SAIGE for the combined variants analysis. Run each line of the script sequentially using the SAIGE software.
 
-Contributions are welcome! Please fork this repository and submit a pull request for any proposed changes or additions.
+4. **Analyze Combined P-values**  
+   After running the SAIGE analysis, use the `analysis_combined_pvalues.R` script to analyze the combined p-values and interpret the results.
+
+### Notes
+
+- Ensure that the SAIGE software is properly installed and configured before running the analysis.
+- Make sure all necessary input files are prepared and available in the appropriate directories before starting the analysis.
+
 
 ## License
+
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
 
 This work is licensed under a
@@ -112,3 +145,4 @@ This work is licensed under a
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
+
