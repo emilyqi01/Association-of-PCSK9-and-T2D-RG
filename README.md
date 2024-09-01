@@ -23,17 +23,24 @@ This repository contains scripts and data preprocessing workflows for analyzing 
 
 ## Setup and Installation
 
-To run the scripts in this repository, you will need to have R, Python, and PLINK installed, along with the necessary libraries:
+To run the analysis, you will need to install the SAIGE and PLINK software. It is recommended to use a virtual machine or a server to perform the analysis due to the computational requirements. All necessary commands for running SAIGE and PLINK are provided in the `.sh` files within this repository.
+
+In addition to SAIGE and PLINK, the scripts in this repository require R and Python, along with the following libraries:
 
 ### R Libraries
 
-- `ggplot2`, `dplyr`, `tidyr`, `gridExtra`, `MASS`
+Make sure the following R libraries are installed:
 
-### Python Libraries
+- `ggplot2`
+- `dplyr`
+- `tidyr`
+- `gridExtra`
+- `MASS`
 
-- `pandas`, `scikit-learn`, `numpy`
+You can install these libraries in R using the command:
 
-Install the libraries using `install.packages()` in R or `pip install` for Python.
+```r
+install.packages(c("ggplot2", "dplyr", "tidyr", "gridExtra", "MASS"))
 
 ## Project Structure
 
