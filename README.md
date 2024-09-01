@@ -4,6 +4,7 @@ This repository contains scripts and data preprocessing workflows for analyzing 
 
 ## Table of Contents
 
+- [Important Information Before Reproducing the Project](#important-information-before-reproducing-the-project)
 - [Project Structure](#project-structure)
 - [Setup and Installation](#setup-and-installation)
 - [Data Preprocessing](#data-preprocessing)
@@ -11,6 +12,14 @@ This repository contains scripts and data preprocessing workflows for analyzing 
 - [Combined Variants Analysis](#combined-variants-analysis)
 - [Contributing](#contributing)
 - [License](#license)
+
+## Important Information Before Reproducing the Project
+
+- **Data Access**: This project utilizes data from the UK Biobank, which is subject to copyright and cannot be redistributed. You will need to request access and download the necessary data directly from the [UK Biobank website](https://www.ukbiobank.ac.uk/).
+
+- **Software Requirements**: The project relies on various software tools and is primarily executed via terminal commands. To successfully reproduce the results, you may need to install additional software. Please refer to the **Installation** section for detailed instructions on the required software and installation steps.
+
+- **Modifying Directory Paths**: The scripts in this project contain hardcoded directory paths. Before running the scripts, please update these paths to match your local environment.
 
 ## Project Structure
 
