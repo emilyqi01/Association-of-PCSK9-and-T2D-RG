@@ -5,8 +5,8 @@ This repository contains scripts and data preprocessing workflows for analyzing 
 ## Table of Contents
 
 - [Important Information Before Reproducing the Project](#important-information-before-reproducing-the-project)
-- [Project Structure](#project-structure)
 - [Setup and Installation](#setup-and-installation)
+- [Project Structure](#project-structure)
 - [Data Preprocessing](#data-preprocessing)
 - [Single Variant Analysis](#single-variant-analysis)
 - [Combined Variants Analysis](#combined-variants-analysis)
@@ -17,9 +17,23 @@ This repository contains scripts and data preprocessing workflows for analyzing 
 
 - **Data Access**: This project utilizes data from the UK Biobank, which is subject to copyright and cannot be redistributed. You will need to request access and download the necessary data directly from the [UK Biobank website](https://www.ukbiobank.ac.uk/).
 
-- **Software Requirements**: The project relies on various software tools and is primarily executed via terminal commands. To successfully reproduce the results, you may need to install additional software. Please refer to the **Installation** section for detailed instructions on the required software and installation steps.
+- **Software Requirements**: The project relies on various software tools and is primarily executed via terminal commands. To successfully reproduce the results, you may need to install additional software. Please refer to the [Setup and Installation](#setup-and-installation) section for detailed instructions on the required software and installation steps.
 
 - **Modifying Directory Paths**: The scripts in this project contain hardcoded directory paths. Before running the scripts, please update these paths to match your local environment.
+
+## Setup and Installation
+
+To run the scripts in this repository, you will need to have R, Python, and PLINK installed, along with the necessary libraries:
+
+### R Libraries
+
+- `ggplot2`, `dplyr`, `tidyr`, `gridExtra`, `MASS`
+
+### Python Libraries
+
+- `pandas`, `scikit-learn`, `numpy`
+
+Install the libraries using `install.packages()` in R or `pip install` for Python.
 
 ## Project Structure
 
@@ -54,19 +68,6 @@ This folder contains scripts for combined variant analysis using burden tests, S
 - `analysis_combined_pvalues.R`: R script to analyze combined p-values from multiple tests.
 - `hierarchical_clustering.R`: R script for hierarchical clustering of genetic variants based on Z-scores.
 
-## Setup and Installation
-
-To run the scripts in this repository, you will need to have R, Python, and PLINK installed, along with the necessary libraries:
-
-### R Libraries
-
-- `ggplot2`, `dplyr`, `tidyr`, `gridExtra`, `MASS`
-
-### Python Libraries
-
-- `pandas`, `scikit-learn`, `numpy`
-
-Install the libraries using `install.packages()` in R or `pip install` for Python.
 
 ## Data Preprocessing
 
